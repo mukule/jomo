@@ -1,0 +1,108 @@
+
+
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--favicon-->
+    <link rel="shortcut icon" href="{% static 'main/images/logo-icon.jpg' %}" type="image/jpg">
+	<!--plugins-->
+    <link rel="stylesheet" href="{% static 'main/plugins/simplebar/css/simplbar.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'main/plugins/perfect-scrollbar/css/perfect-scrollbar.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'main/plugins/metismenu/css/metisMenu.min.css' %}" type="text/css">
+	<!-- loader-->
+    <link rel="stylesheet" href="{% static 'main/css/pace.min.css' %}" type="text/css">
+	<script src="{% static 'main/css/pace.min.js' %}"></script>
+	<!-- Bootstrap CSS -->
+	<link href="{% static 'main/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'main/css/bootstrap-extended.css' %}" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="{% static 'main/css/app.css' %}" rel="stylesheet">
+    <link href="{% static 'main/css/icons.css' %}" rel="stylesheet">
+
+    <!-- Theme Style CSS -->
+	<link rel="stylesheet" href="{% static 'main/css/dark-theme.css' %}" />
+	<link rel="stylesheet" href="{% static 'main/css/semi-dark.css' %}" />
+	<link rel="stylesheet" href="{% static 'main/css/header-colors.css' %}" />
+
+	<title>CRVWWDA-Visitors Registration System</title>
+</head>
+
+<body>
+	
+        {% include 'main/includes/navbar.html' %}
+       
+                    {% include 'main/includes/messaging.html' %}
+                    {% block content %}
+                    {% endblock %}
+                    {% include 'main/includes/footer.html' %}
+     
+	
+    <script src="{% static 'main/js/bootstrap.bundle.min.js' %}"></script>
+	<!--plugins-->
+    <script src="{% static 'main/js/jquery.min.js' %}"></script>
+	
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('DOMContentLoaded event fired');
+
+        const departmentSelect = document.getElementById('department');
+        const hostSelect = document.getElementById('host');
+        const staffData = {{ staff_by_department|safe }};
+        let staffForSelectedDepartment = [];
+
+        if (!departmentSelect || !hostSelect) {
+            console.error('Could not find the department or host element.');
+            return;
+        }
+
+        departmentSelect.addEventListener('change', function () {
+            const selectedDepartment = departmentSelect.value;
+            console.log('Selected department:', selectedDepartment);
+
+            // Retrieve staff for the selected department from the pre-loaded data
+            staffForSelectedDepartment = staffData[selectedDepartment];
+
+            // Log the raw JSON data before parsing
+            console.log('Raw Staff Data JSON:', staffForSelectedDepartment);
+
+            // Clear existing options for staff
+            hostSelect.innerHTML = '<option value="">Choose Host</option>';
+
+            staffForSelectedDepartment.forEach(staff => {
+                const option = document.createElement('option');
+                option.value = staff.id; 
+                option.textContent = `${staff.first_name} ${staff.last_name}`;
+                hostSelect.appendChild(option);
+            });
+
+            // Optionally, trigger a change event on the hostSelect element
+            const event = new Event('change');
+            hostSelect.dispatchEvent(event);
+        });
+
+        hostSelect.addEventListener('change', function () {
+            const selectedHostId = hostSelect.value;
+            console.log('Selected Host ID:', selectedHostId);
+        });
+    });
+</script>
+	<script>
+		new PerfectScrollbar(".app-container")
+	</script>
+
+<script>
+    // Get the current year
+    var currentYear = new Date().getFullYear();
+
+    // Update the content of the span with the current year
+    document.getElementById('currentYear').innerText = currentYear;
+</script>
+
+</body>
+
+</html>
