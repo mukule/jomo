@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'users',
+    'service',
+    'crispy_forms',
+    'crispy_bootstrap4',
+    'office',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +138,15 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = 'users.CustomUser'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+LOGIN_URL = 'users:login'
+LOGIN_REDIRECT_URL = 'profile'
+AUTHENTICATION_BACKENDS = ['users.backends.EmailBackend']
+DATA_UPLOAD_MAX_MEMORY_SIZE = 5242880
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+SESSION_COOKIE_AGE = 1800  # 30 minutes
+SESSION_SAVE_EVERY_REQUEST = True

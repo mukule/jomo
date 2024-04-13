@@ -1,0 +1,78 @@
+{% extends 'main/base.html' %}
+        {% block content %}
+                <!-- Begin page -->
+                <div id="layout-wrapper">
+
+                  <div class="main-content">
+      
+                      <div class="page-content">
+                          <div class="container-fluid">
+                              <!-- start page title -->
+                              <div class="row">
+                                  <div class="col-12">
+                                      <div class="page-title-box d-flex align-items-center justify-content-between">
+                                          <h4 class="mb-0 font-size-18">Existing Clients</h4>
+      
+                                          
+                                          
+                                      </div>
+                                  </div>
+                              </div>     
+                              <!-- end page title -->
+                              <!-- end row -->
+                              <div class="row">
+                                  <div class="col-xl-12">
+                                      <div class="card">
+                                          <div class="card-body">
+                                              </p>
+      
+                                              <div class="table-responsive">
+                                                <table class="table table-centered table-hover table-xl mb-0" id="recent-orders">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="border-top-0">First Name</th>
+                                                            <th class="border-top-0">Last Name</th>
+                                                            <th class="border-top-0">Email</th>
+                                                            <th class="border-top-0">Phone Number</th>
+                                                            <th class="border-top-0">ID Number</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {% for client in clients_list %}
+                                                            <tr>
+                                                                <td class="text-truncate">
+                                                                    <a href="{% url 'users:edit_client' client.id %}">{{ client.first_name }}</a>
+                                                                </td>
+                                                                <td class="text-truncate">{{ client.last_name }}</td>
+                                                                <td class="text-truncate">{{ client.email }}</td>
+                                                                <td class="text-truncate">{{ client.phone_number }}</td>
+                                                                <td class="text-truncate">{{ client.id_number }}</td>
+                                                            </tr>
+                                                        {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                                <div class="col-12 text-center">
+                                                    <a href="{% url 'users:add_client' %}" class="btn btn-primary btn-lg">Add New Client</a>
+                                                </div>
+                                                
+                                            </div>
+      
+                                          </div> <!-- end card-body-->
+                                      </div> <!-- end card-->
+                                  </div> <!-- end col -->
+                              </div>
+                            
+                              
+          
+          
+      
+                              
+                          </div> <!-- container-fluid -->
+                      </div>
+      
+                  </div>
+                  <!-- end main content-->
+      
+              </div>
+        {% endblock content %}
+   

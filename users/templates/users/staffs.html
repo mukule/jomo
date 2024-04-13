@@ -1,0 +1,79 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<!-- Begin page -->
+<div id="layout-wrapper">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="container-fluid">
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box d-flex align-items-center justify-content-between">
+                            <h4 class="mb-0 font-size-18">Staffs</h4>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card">
+                            
+                            <div class="card-body">
+                                <h4 class="card-title">All Staffs</h4>
+
+                                <div class="table-responsive">
+                                    <table class="table table-centered table-hover table-xl mb-0" id="car-service-table">
+                                        <thead>
+                                            <tr>
+                                                <th class="border-top-0">Staff ID</th>
+                                                <th class="border-top-0">Username</th>
+                                                <th class="border-top-0">First Name</th>
+                                                <th class="border-top-0">Last Name</th>
+                                                <th class="border-top-0">Email</th>
+                                                <th class="border-top-0">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% if users %}
+                                                {% for service in users %}
+                                                    <tr>                                                      
+                                                        <td class="text-truncate">{{ service.id }}</td>
+                                                        <td class="text-truncate">{{ service.username }}</td>
+                                                        <td class="text-truncate">{{ service.first_name }}</td>
+                                                        <td class="text-truncate">{{ service.last_name }}</td>
+                                                        <td class="text-truncate">{{ service.email }}</td>
+                                                        <td class="text-truncate">
+                                                            <a href="{% url 'car:edit_car_service' service.id %}" class="btn btn-sm btn-warning">
+                                                                <i class="fas fa-edit"></i> Edit
+                                                            </a>
+                                                            <a href="{% url 'car:delete_car_service' service.id %}" class="btn btn-sm btn-danger">
+                                                                <i class="fas fa-trash"></i> Delete
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                {% endfor %}
+                                            {% else %}
+                                                <tr>
+                                                    <td colspan="6" class="text-center">No car serviced yet.</td>
+                                                </tr>
+                                            {% endif %}
+                                        </tbody>
+                                    </table>
+                                    <div class="col-12 text-center">
+                                        <a href="{% url 'users:register' %}" class="btn btn-primary btn-lg">Add Staff</a>
+                                    </div>
+                                </div>
+
+                                <!-- End Pagination Links -->
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+                </div>
+            </div>
+        </div> <!-- container-fluid -->
+    </div>
+</div>
+{% endblock content %}

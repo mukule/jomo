@@ -7,102 +7,90 @@
 <head>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jomotech IT Solutions|Computer school|Cyber services|Graphics Design|Web application Development</title>
 	<!--favicon-->
-    <link rel="shortcut icon" href="{% static 'main/images/logo-icon.jpg' %}" type="image/jpg">
-	<!--plugins-->
-    <link rel="stylesheet" href="{% static 'main/plugins/simplebar/css/simplbar.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'main/plugins/perfect-scrollbar/css/perfect-scrollbar.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'main/plugins/metismenu/css/metisMenu.min.css' %}" type="text/css">
-	<!-- loader-->
-    <link rel="stylesheet" href="{% static 'main/css/pace.min.css' %}" type="text/css">
-	<script src="{% static 'main/css/pace.min.js' %}"></script>
-	<!-- Bootstrap CSS -->
-	<link href="{% static 'main/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'main/css/bootstrap-extended.css' %}" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link href="{% static 'main/css/app.css' %}" rel="stylesheet">
-    <link href="{% static 'main/css/icons.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'main/images/favicons/favicon-16x16.png' %}" type="image/jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'main/images/favicons/apple-touch-icon.png' %}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'main/images/favicons/favicon-32x32.png' %}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'main/images/favicons/favicon-16x16.png' %}" />
+	
+     <!-- fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link
+         href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+         rel="stylesheet">
 
-    <!-- Theme Style CSS -->
-	<link rel="stylesheet" href="{% static 'main/css/dark-theme.css' %}" />
-	<link rel="stylesheet" href="{% static 'main/css/semi-dark.css' %}" />
-	<link rel="stylesheet" href="{% static 'main/css/header-colors.css' %}" />
+    <link rel="stylesheet" href="{% static 'main/vendors/bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.min.css' %}" />
+<link rel="stylesheet" href="{% static 'main/vendors/animate/custom-animate.css' %}" />
+<link rel="stylesheet" href="{% static 'main/vendors/fontawesome/css/all.min.css' %}" />
+<link rel="stylesheet" href="{% static 'main/vendors/jarallax/jarallax.css' %}" />
+<link rel="stylesheet" href="{% static 'main/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}" />
+<link rel="stylesheet" href="{% static 'main/vendors/nouislider/nouislider.min.css' %}" />
+<link rel="stylesheet" href="{% static 'main/vendors/nouislider/nouislider.pips.css' %}" />
+<link rel="stylesheet" href="{% static 'main/vendors/odometer/odometer.min.css' %}" />
+<link rel="stylesheet" href="{% static 'main/vendors/swiper/swiper.min.css' %}" />
+<link rel="stylesheet" href="{% static 'main/vendors/izeetak-icons/style.css' %}" />
+<link rel="stylesheet" href="{% static 'main/vendors/tiny-slider/tiny-slider.min.css' %}" />
+<link rel="stylesheet" href="{% static 'main/vendors/reey-font/stylesheet.css' %}" />
+<link rel="stylesheet" href="{% static 'main/vendors/owl-carousel/owl.carousel.min.css' %}" />
+<link rel="stylesheet" href="{% static 'main/vendors/owl-carousel/owl.theme.default.min.css' %}" />
+<link rel="stylesheet" href="{% static 'main/vendors/twentytwenty/twentytwenty.css' %}" />
+<link rel="stylesheet" href="{% static 'main/vendors/bxslider/jquery.bxslider.css' %}" />
+<link rel="stylesheet" href="{% static 'main/vendors/bootstrap-select/css/bootstrap-select.min.css' %}" />
+<link rel="stylesheet" href="{% static 'main/vendors/vegas/vegas.min.css' %}" />
+<link rel="stylesheet" href="{% static 'main/vendors/jquery-ui/jquery-ui.css' %}" />
+<link rel="stylesheet" href="{% static 'main/vendors/timepicker/timePicker.css' %}" />
 
-	<title>CRVWWDA-Visitors Registration System</title>
+<link rel="stylesheet" href="{% static 'main/css/style.css' %}" />
+<link rel="stylesheet" href="{% static 'main/css/style-responsive.css' %}" />
 </head>
 
 <body>
+    <div class="page-wrapper text-center">
 	
         {% include 'main/includes/navbar.html' %}
        
-                    {% include 'main/includes/messaging.html' %}
+                    <!-- {% include 'main/includes/messaging.html' %} -->
                     {% block content %}
                     {% endblock %}
                     {% include 'main/includes/footer.html' %}
      
 	
-    <script src="{% static 'main/js/bootstrap.bundle.min.js' %}"></script>
-	<!--plugins-->
-    <script src="{% static 'main/js/jquery.min.js' %}"></script>
+    <script src="{% static 'main/vendors/jquery/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'main/vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'main/vendors/jarallax/jarallax.min.js' %}"></script>
+    <script src="{% static 'main/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'main/vendors/jquery-appear/jquery.appear.min.js' %}"></script>
+    <script src="{% static 'main/vendors/jquery-circle-progress/jquery.circle-progress.min.js' %}"></script>
+    <script src="{% static 'main/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'main/vendors/jquery-validate/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'main/vendors/nouislider/nouislider.min.js' %}"></script>
+    <script src="{% static 'main/vendors/odometer/odometer.min.js' %}"></script>
+    <script src="{% static 'main/vendors/swiper/swiper.min.js' %}"></script>
+    <script src="{% static 'main/vendors/tiny-slider/tiny-slider.min.js' %}"></script>
+    <script src="{% static 'main/vendors/wnumb/wNumb.min.js' %}"></script>
+    <script src="{% static 'main/vendors/wow/wow.js' %}"></script>
+    <script src="{% static 'main/vendors/isotope/isotope.js' %}"></script>
+    <script src="{% static 'main/vendors/countdown/countdown.min.js' %}"></script>
+    <script src="{% static 'main/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'main/vendors/twentytwenty/twentytwenty.js' %}"></script>
+    <script src="{% static 'main/vendors/twentytwenty/jquery.event.move.js' %}"></script>
+    <script src="{% static 'main/vendors/bxslider/jquery.bxslider.min.js' %}"></script>
+    <script src="{% static 'main/vendors/bootstrap-select/js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'main/vendors/vegas/vegas.min.js' %}"></script>
+    <script src="{% static 'main/vendors/jquery-ui/jquery-ui.js' %}"></script>
+    <script src="{% static 'main/vendors/timepicker/timePicker.js' %}"></script>
+    <script src="{% static 'main/vendors/particles/particles.min.js' %}"></script>
+    <script src="{% static 'main/vendors/particles/particles-config.js' %}"></script>
+    <script src="{% static 'main/js/izeetak.js' %}"></script>
+   
+                    
 	
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        console.log('DOMContentLoaded event fired');
 
-        const departmentSelect = document.getElementById('department');
-        const hostSelect = document.getElementById('host');
-        const staffData = {{ staff_by_department|safe }};
-        let staffForSelectedDepartment = [];
-
-        if (!departmentSelect || !hostSelect) {
-            console.error('Could not find the department or host element.');
-            return;
-        }
-
-        departmentSelect.addEventListener('change', function () {
-            const selectedDepartment = departmentSelect.value;
-            console.log('Selected department:', selectedDepartment);
-
-            // Retrieve staff for the selected department from the pre-loaded data
-            staffForSelectedDepartment = staffData[selectedDepartment];
-
-            // Log the raw JSON data before parsing
-            console.log('Raw Staff Data JSON:', staffForSelectedDepartment);
-
-            // Clear existing options for staff
-            hostSelect.innerHTML = '<option value="">Choose Host</option>';
-
-            staffForSelectedDepartment.forEach(staff => {
-                const option = document.createElement('option');
-                option.value = staff.id; 
-                option.textContent = `${staff.first_name} ${staff.last_name}`;
-                hostSelect.appendChild(option);
-            });
-
-            // Optionally, trigger a change event on the hostSelect element
-            const event = new Event('change');
-            hostSelect.dispatchEvent(event);
-        });
-
-        hostSelect.addEventListener('change', function () {
-            const selectedHostId = hostSelect.value;
-            console.log('Selected Host ID:', selectedHostId);
-        });
-    });
-</script>
-	<script>
-		new PerfectScrollbar(".app-container")
-	</script>
-
-<script>
-    // Get the current year
-    var currentYear = new Date().getFullYear();
-
-    // Update the content of the span with the current year
-    document.getElementById('currentYear').innerText = currentYear;
-</script>
-
+    </div>
 </body>
 
 </html>
