@@ -10,6 +10,8 @@ urlpatterns = [
     path('users/', include('users.urls', namespace='users')),
     path('office/', include('office.urls', namespace='office')),
     path('service/', include('service.urls', namespace='service')),
+
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

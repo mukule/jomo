@@ -1,0 +1,48 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="page-header">
+    <div class="page-header-bg" style="background-image: url({{ school.banner.url }})">
+    </div>
+    <div class="page-header-bg-overly"></div>
+    <div class="page-header-shape wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms"
+        style="background-image: url(assets/images/shapes/page-header-shape.png)"></div>
+    <div class="container">
+        <div class="page-header__inner">
+            <ul class="thm-breadcrumb list-unstyled">
+                <li><a href="/">Home</a></li>
+                <li><span>/</span></li>
+                <li>{{school.name}}</li>
+            </ul>
+            <h2>{{course.name}}</h2>
+        </div>
+    </div>
+</section>
+
+<section class="about-two">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="about-two__left wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
+                    <div class="about-two__img">
+                        <img src="{{ course.flyer.url }}" alt="{{ course.name }} Flyer">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="about-two__right">
+                    <div class="section-title text-left">
+                        <span class="section-title__tagline">Join Us Today</span>
+                        <h2 class="section-title__title">{{course.tag}}</h2>
+                    </div>
+                    <p class="about-two__text-1">{{course.description}}</p>
+                    <p class="about-two__text-2">Ksh. {{course.price}}</p>
+                    <a href="" class="btn btn-primary">Join us Today</a>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

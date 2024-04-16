@@ -1,12 +1,102 @@
-
-                    <div class="container-fluid text-center">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="text-center text-lg-left">
-                                    <div class="text-center text-lg-left" id="currentYearContainer">&copy; <span id="currentYear"></span> Jomotech</div>
-                                </div>
+{% load static %}
+<footer class="site-footer">
+    <div class="site-footer__top">
+        <div class="container">
+            <div class="site-footer__top-inner">
+                <div class="site-footer-map"
+                <div class="some-element" style="background-image: url({% static 'main/images/shapes/site-footer-mape.png' %})"></div>
+                <div class="row">
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="footer-widget__column footer-widget__about">
+                            <div class="footer-widget__about-logo">
+                                <a href="/"><img src="{% static 'main/images/resources/footer-logo.png' %}"
+                                        alt=""></a>
                             </div>
+                            <p class="footer-widget__about-text">We handle all kinds of Cyber Services and Computer Trainings</p>
+                            <div class="footer-widget__about-social">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="footer-widget__column footer-widget__links clearfix">
+                            <h3 class="footer-widget__title">Links</h3>
+                            <ul class="footer-widget__links-list list-unstyled clearfix">
+                                <li><a href="">Home</a></li>
+                                <li><a href="">Serives</a></li>
+                                <li><a href="">Shop</a></li>
+                                <li><a href="">Contact Us</a></li>
+                                <li><a href="">Blog</a></li>
+                            </ul>
                            
                         </div>
                     </div>
-               
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="footer-widget__column footer-widget__contact">
+                            <h3 class="footer-widget__title">Contact</h3>
+                            <p class="footer-widget__contact-text">Ruaka</p>
+                            <ul class="list-unstyled footer-widget__contact-list">
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-email"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><a href="mailto:info@jomotech.co.ke">info@jomotech.co.ke</a></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-telephone"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><a href="tel:+254 795 335796">+254 795 335796</a></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="footer-widget__column footer-widget__newsletter">
+                            <h3 class="footer-widget__title">Newsletter</h3>
+                            <p class="footer-widget__newsletter-text">Subscribe to our newsletter for latest Offers</p>
+                            <form class="footer-widget__newsletter-form mc-form"
+                                data-url="https://xyz.us18.list-manage.com/subscribe/post?u=20e91746ef818cd941998c598&id=cc0ee8140e">
+                                <div class="footer-widget__newsletter-input-box">
+                                    <input type="email" placeholder="Email address" name="email">
+                                    <button type="submit" class="footer-widget__newsletter-btn">Send</button>
+                                </div>
+                            </form>
+                            <div class="mc-form__response"></div><!-- /.mc-form__response -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="site-footer__bottom">
+        <div class="site-footer__bottom-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="site-footer__bottom-inner">
+                            <div class="site-footer__bottom-left">
+                                <p class="site-footer__bottom-text">© All Copyright <span class="dynamic-year">
+                                    </span><!-- /.dynamic-year --> by <a href="#">Jomotech.co.ke</a></p>
+                            </div>
+                            <div class="site-footer__bottom-right">
+                                <ul class="list-unstyled site-footer__bottom-menu">
+                                    <li><a href="">Terms & Condition</a></li>
+                                    <li><span>/</span></li>
+                                    <li><a href="">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

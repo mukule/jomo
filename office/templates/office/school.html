@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row mt-3">
+    <div class="container">
+        {% if school %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Tag</th>
+                    <th>Description</th>
+                    <th>Logo</th>
+                    <th>Banner</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ school.name }}</td>
+                    <td>{{ school.tag }}</td>
+                    <td>{{ school.description }}</td>
+                    <td><img src="{{ school.logo.url }}" alt="{{ school.name }} Logo" style="max-width: 100px;"></td>
+                    <td><img src="{{ school.banner.url }}" alt="{{ school.name }} Banner" style="max-width: 100px;"></td>
+                </tr>
+            </tbody>
+        </table>
+        {% else %}
+        <h2>School Details Not Available</h2>
+        <h3 class="news-one__title">
+            <a class="btn btn-primary text-white" href="{% url 'office:create_school' %}">Create School</a>
+        </h3>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

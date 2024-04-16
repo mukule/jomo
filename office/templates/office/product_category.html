@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row mt-3">
+    <div class="container">
+        {% if categories %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Banner</th>
+                    <th>View Products</th> <!-- New column for details -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for category in categories %}
+                <tr>
+                    <td>{{ category.name }}</td>
+                    <td><img src="{{ category.banner.url }}" alt="{{ category.name }} Banner" style="max-width: 100px;"></td>
+                    <td><a href="{% url 'office:product_category_detail' category.id %}" class="btn btn-primary">Products</a></td> <!-- Link to the detail view -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <h2>No Product Categories Available</h2>
+        {% endif %}
+
+        <h3 class="news-one__title">
+            <a class="btn btn-primary text-white" href="{% url 'office:create_product_category' %}">Add Product Category</a>
+        </h3>
+    </div>
+</div>
+{% endblock content %}

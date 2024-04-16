@@ -6027,6 +6027,7 @@ canvas {
 }
 
 .comment-form__input-box input[type="text"],
+.comment-form__input-box input[type="number"],
 .comment-form__input-box input[type="file"],
 .comment-form__input-box input[type="email"],
 .comment-form__input-box input[type="password"],

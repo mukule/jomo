@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row mt-3" style="margin-bottom: 400px !important;">
+    <div class="container">
+       <div class="row">
+        {% if about %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Year Started</th>
+                    <th>Tag</th>
+                    <th>Description</th>
+                    <th>Action</th> <!-- New column for edit link -->
+                </tr>
+            </thead>
+            <tbody>
+               
+                <tr>
+                    <td>{{ about.name }}</td>
+                    <td>{{ about.year_started }}</td>
+                    <td>{{ about.tag }}</td>
+                    <td>{{ about.description }}</td>
+                    <td><a href="{% url 'office:edit_about' about.id %}" class="btn btn-primary">Edit</a></td>
+                </tr>
+              
+            </tbody>
+        </table>
+        {% else %}
+        <h2>About Us Details Not updated</h2>
+        <h3 class="news-one__title">
+            <a class="btn btn-primary text-white" href="{% url 'office:create_about' %}">Create About</a>
+        </h3>
+        {% endif %}
+
+       </div>
+        
+    </div>
+</div>
+{% endblock content %}

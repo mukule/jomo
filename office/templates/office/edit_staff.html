@@ -1,0 +1,67 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<section class="news-details">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-6 col-lg-6">
+        <div class="card p-5" style="border-radius: 1px;">
+          <div class="comment-form">
+            <h3 class="comment-form__title">Edit Staff</h3>
+            <form method="POST" class="comment-one__form">
+              {% csrf_token %}
+              <div class="col-xl-12">
+                <div class="comment-form__input-box">
+                  {{ form.username|as_crispy_field }}
+                </div>
+            </div>
+            <div class="col-xl-12">
+              <div class="comment-form__input-box">
+                {{ form.email|as_crispy_field }}
+              </div>
+          </div>
+          <div class="col-xl-12">
+            <div class="comment-form__input-box">
+              {{ form.first_name|as_crispy_field }}
+            </div>
+        </div>
+        <div class="col-xl-12">
+          <div class="comment-form__input-box">
+            {{ form.last_name|as_crispy_field }}
+          </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="comment-form__input-box">
+          {{ form.access_level|as_crispy_field }}
+        </div>
+    </div>
+      <div class="col-xl-12">
+        <div class="comment-form__input-box">
+          {{ form.password1|as_crispy_field }}
+        </div>
+    </div>
+    <div class="col-xl-12">
+      <div class="comment-form__input-box">
+        {{ form.password2|as_crispy_field }}
+      </div>
+  </div>
+             
+             
+              <div class="form-group">
+                <button type="submit" class="thm-btn comment-form__btn">submit
+                  </button>
+                 <div class="row">
+                <small><a href="">Use simple password such as <b>Jomotech@2018</b> This can be changed by the staff</a></small>
+                 </div>
+                 
+              </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

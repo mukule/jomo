@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row mt-3">
+    <div class="container">
+       <div class="row mb-4">
+        <h2 class="text-center">{{category.name}}</h2>
+       </div>
+        {% if products %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.price }}</td>
+                    <td><img src="{{ product.image.url }}" alt="{{ product.name }} Image" style="max-width: 100px;"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <h2>No Products Registered under this category</h2>
+        {% endif %}
+
+        <h3 class="news-one__title">
+            <a href="{% url 'office:create_product' category_id=category.id %}" class="btn btn-primary text-white">Add Product</a>
+        </h3>
+        
+    </div>
+</div>
+{% endblock content %}

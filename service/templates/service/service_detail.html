@@ -1,0 +1,80 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+        <section class="page-header">
+            <div class="page-header-bg" style="background-image: url({{ category.banner.url }})">
+            </div>
+            <div class="page-header-bg-overly"></div>
+            <div class="page-header-shape wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms"
+                style="background-image: url({% static 'main/images/shapes/page-header-shape.png' %})">
+            </div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="/">Home</a></li>
+                        <li><span>/</span></li>
+                        <li>Services</li>
+                    </ul>
+                    <h2>{{category.name}}</h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="business-growth business-growth-two mt-4">
+            <div class="business-growth__top">
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="business-growth__left">
+                                <div class="section-title text-left">
+                                  
+                                    <h2 class="section-title__title">{{category.name}}
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="business-growth__right">
+                                <p class="business-growth__right-text">{{category.description}}</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+           {% if services %}
+           <div class="container">
+            <div class="business-growth__bottom">
+                <div class="row">
+                   {% for service in services %}
+                   <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="100ms">
+                    <!--Business Growth Single-->
+                    <div class="business-growth__single">
+                        <div class="business-growth__img">
+                            <img src="{{ service.icon.url }}" alt="">
+                        </div>
+                        <div class="business-growth__content">
+                            <h4 class="business-growth__title">
+                                <a href="">{{service.name}}</a>
+                            </h4>
+                            <p class="business-growth__text">{{service.description}}</p>
+                               <div class="row mt-1">
+                                <div class="btn btn-primary">Ksh. {{service.price}}</div>
+                               </div>
+                        </div>
+                       
+                    </div>
+                    
+                </div>
+                {% endfor %}
+                    
+                </div>
+            </div>
+           
+        </div>
+           {%else%}
+           <p>No Services Registered in this category</p>
+           {%endif%}
+        </section>
+{% endblock content %}
